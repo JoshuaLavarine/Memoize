@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Article from './Article';
 
 class Pioneer extends Component {
   constructor() {
@@ -18,12 +19,19 @@ class Pioneer extends Component {
   }
 
   render() {
-    return (
-      <section>
-        <p>select a pioneer from the following images</p>
+    switch(this.state.currentPioneer > 0) {
+      case(true):
+      return (
         <Article />
-      </section>
-    )
+      )
+    default:
+      return (
+        <article>
+          <p>select a pioneer from the following images</p>
+          {/* <img> map through the images of 5 pioneers</img> */}
+        </article>
+      )
+    }
   }
 }
 
