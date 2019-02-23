@@ -9,30 +9,31 @@ class Pioneer extends Component {
     }
   }
 
+  
+  selectPioneer = (event) => {
+    this.setState({
+      currentPioneer: event.target.id
+    })
+  }
+
   displayPioneers = () => {
     return this.props.pioneers.pioneersData.map(pioneer => {
       return (
-        <img src={pioneer.img}></img>
+        <img onClick={this.selectPioneer} src={pioneer.img} id={pioneer.id}></img>
       )
     });
   } 
 
-  selectPioneer = () => {
-// on click select image 
-// grab id
-  }
-
-
-
   render() {
-    // switch(this.state.currentPioneer > 0) {
-    //   case(true):
-    //   return (
-    //     <Article 
-    //     currentPioneer={this.state.currentPioneer}
-    //     pioneers={this.props.pioneers}/>
-    //   )
-    // default:
+    switch(this.state.currentPioneer > 0) {
+      case(true):
+      return (
+        <Article 
+        currentPioneer={this.state.currentPioneer}
+        pioneers={this.props.pioneers}/>
+        
+      )
+    default:
       return (
         <article>
           <p>select a pioneer from the following images</p>
@@ -41,6 +42,8 @@ class Pioneer extends Component {
           </section>
         </article>
       )
+    }
   }
 }
+
 export default Pioneer

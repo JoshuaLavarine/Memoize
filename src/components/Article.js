@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Quiz from './Quiz';
 
 class Article extends Component {
   constructor() {
@@ -14,25 +15,35 @@ class Article extends Component {
     })
   }
 
-  render() {
-    const displayPioneer = this.props.pioneers.find(pioneer => {
-      return pioneer.id === this.props.currentPioneer
+  displayPioneer = () => {
+    let selectedPioneer = this.props.pioneers.pioneersData.find(pioneer => {
+      console.log("current pioneer id", this.props.currentPioneer)
+      return pioneer.id == this.props.currentPioneer
     })
+    return ( 
+      <img src={selectedPioneer.img}></img>
+    )
+  }
 
-    // switch() {
-    //   case(true):
-    //   return (
+  render() {
 
-    //   )
-    // default:
+    switch(this.state.displayQuiz) {
+      case(true):
+      return (
+        <Quiz />
+      )
+    default:
       return (
         <section>
-          <img src={displayPioneer.img}></img>
+          <article>
+            {this.displayPioneer()}
+          </article>
           <p>Article paragraphs go here</p>
           <p>Once the article is displayed, there will be a button to click. When the button is clicked, the article goes away and the questions component is displayed</p>
           <button onClick={this.state.displayQuiz}>Go to Quiz</button>
         </section>
-    )
+      )
+    }
   }
 }
 
