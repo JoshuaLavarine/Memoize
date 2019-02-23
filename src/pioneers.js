@@ -1,6 +1,7 @@
 const pioneers = [
 	{
 		"pioneer": "Grace Hopper",
+		"id": 1,
 		"paragraphs": {
 			"1": "Grace Brewster Murray Hopper was an American computer scientist and United States Navy rear admiral. One of the first programmers of the Harvard Mark I computer, she was a pioneer of computer programming who invented one of the first compiler related tools. She popularized the idea of machine-independent programming languages, which led to the development of COBOL, an early high-level programming language still in use today.",
 			"2": "Prior to joining the Navy, Hopper attained a Ph.D. in mathematics from Yale University and was a professor of mathematics at Vassar College. Hopper joined the Navy Reserves and began computing career in 1944 when she worked on the Harvard Mark I team.",
@@ -49,6 +50,7 @@ const pioneers = [
   },
 	{
 		"pioneer": "Augusta Ada King, Countess of Lovelace",
+		"id": 2,
 		"paragraphs": {
 			"1": "Augusta Ada King, Countess of Lovelace (1815 - 1852) was an English mathematician and writer, chiefly known for her work on Charles Babbage's proposed mechanical general-purpose computer, the Analytical Engine. She was the first to recognize that the machine had applications beyond pure calculation, and published the first algorithm intended to be carried out by such a machine. As a result, she is sometimes regarded as the first to recognize the full potential of a 'computing machine' and the first computer programmer.",
 			"2": "Ada’s mother promoted her interest in mathematics and logic in an effort to prevent her from developing her father's perceived insanity. Ada married William King and in 1838, she become Countess of Lovelace.",
@@ -95,6 +97,7 @@ const pioneers = [
   },
   {
 		"pioneer": "Alan Turing",
+		"id": 3,
 		"paragraphs": {
 			"1": "Alan Mathison Turing (1912 – 1954) was an English mathematician, computer scientist, logician, cryptanalyst, philosopher and theoretical biologist.[6] Turing was highly influential in the development of theoretical computer science, providing a formalization of the concepts of algorithm and computation with the Turing machine, which can be considered a model of a general-purpose computer.",
 			"2": "Turing is widely considered to be the father of theoretical computer science and artificial intelligence.",
@@ -141,6 +144,7 @@ const pioneers = [
   },
   {
 		"pioneer": "Timothy John Berners-Lee",
+		"id": 4,
 		"paragraphs": {
 			"1": "Sir Timothy John Berners-Lee (1955 - present day) is an English engineer and computer scientist, best known as the inventor of the World Wide Web. He is currently a professor of computer science at the University of Oxford and the Massachusetts Institute of Technology (MIT). He made a proposal for an information management system in March 1989, and he implemented the first successful communication between a Hypertext Transfer Protocol (HTTP) client and server via the internet in mid-November the same year.",
 			"2": "Berners-Lee is the director of the World Wide Web Consortium (W3C), which oversees the continued development of the Web.",
@@ -179,6 +183,7 @@ const pioneers = [
   },
   {
 		"pioneer": "Jennifer Pahlka",
+		"id": 5,
 		"paragraphs": {
 			"1": "Jennifer Pahlka (1969 - present day) is the founder and Executive Director of Code for America. She served as US Deputy Chief Technology Officer from June 2013 to June 2014 and helped found the United States Digital Service. Previously she had worked at CMP Media with various roles in the computer game industry. She was the co-chair and general manager of the Web 2.0 conferences.",
 			"2": "She was born in Port Deposit, Maryland, and raised in Austin, New Haven, and New York City. She is a graduate of the Bronx High School of Science and Yale University.",
