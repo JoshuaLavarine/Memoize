@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import Header from './Header';
 import Pioneer from './Pioneer';
+import pioneersData from '../pioneers'
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      pioneers : []
+      pioneers : pioneersData
     }
   }
 

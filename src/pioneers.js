@@ -1,4 +1,4 @@
-const pioneers = [
+const pioneersData = [
 	{
 		"pioneer": "Grace Hopper",
 		"id": 1,
@@ -192,7 +192,7 @@ const pioneers = [
       "5": "Pahlka was awarded an Internet and Society Award from the Oxford Internet Institute, in recognition of her contribution to digital open government in the US."
 		},
 		"wikipedia": "https://en.wikipedia.org/wiki/Jennifer_Pahlka",
-		"img": "https://i.cdn.turner.com/money/interactive/technology/15-questions-with-jennifer-pahlka/images/headshot_jennifer-pahlka.png",
+		"img": "http://www.greatthoughtstreasury.com/sites/default/files/Jennifer-Pahlka1%5B1%5D.jpg",
 		"multipleChoice": {
 			"questions": [
 				{
@@ -231,5 +231,5 @@ const pioneers = [
 ]
 
 module.exports = {
-	pioneers
+	pioneersData
 } 
