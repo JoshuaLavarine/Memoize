@@ -24,6 +24,16 @@ class Article extends Component {
     )
   }
 
+  displayArticle = () => {
+    let selectedPioneer = this.props.pioneers.pioneersData.find(pioneer => {
+      return pioneer.id == this.props.currentPioneer
+    })
+    let allParagraphs = selectedPioneer.paragraphs.map(paragraph => {
+      return <p>{paragraph}</p>
+    })
+    return allParagraphs
+  }
+
   render() {
     switch(this.state.displayQuiz) {
       case(true):
@@ -40,8 +50,9 @@ class Article extends Component {
           <article>
             {this.displayPioneer()}
           </article>
-          <p>Article paragraphs go here</p>
-          <p>Once the article is displayed, there will be a button to click. When the button is clicked, the article goes away and the questions component is displayed</p>
+          <article>
+            {this.displayArticle()}
+          </article>
           <button onClick={this.displayQuiz}>Go to Quiz</button>
         </section>
       )
