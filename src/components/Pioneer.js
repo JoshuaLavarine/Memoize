@@ -18,7 +18,10 @@ class Pioneer extends Component {
   displayPioneers = () => {
     return this.props.pioneers.pioneersData.map(pioneer => {
       return (
-        <img onClick={this.selectPioneer} src={pioneer.img} id={pioneer.id}></img>
+        <section key={pioneer.pioneer} className="pioneer-card">
+          <img className="pioneer-img" onClick={this.selectPioneer} src={pioneer.img} id={pioneer.id}></img>
+          <p>{pioneer.pioneer}</p>
+        </section>
       )
     })
   } 
@@ -36,8 +39,8 @@ class Pioneer extends Component {
     default:
       return (
         <article>
-          <p>select a pioneer from the following images</p>
-          <section>
+          <p>Please a pioneer's image to learn more.</p>
+          <section className="contain-pioneers">
             {this.displayPioneers()}
           </section>
         </article>

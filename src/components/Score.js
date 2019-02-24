@@ -20,7 +20,6 @@ class Score extends Component {
     })
     console.log(currentPioneer)
     switch(this.props.currentQuestion >= currentPioneer.multipleChoice.questions.length + 1) {
-      // switch(true) {
       case(true):
       return (
         <section>

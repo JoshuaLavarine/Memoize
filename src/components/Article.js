@@ -20,7 +20,7 @@ class Article extends Component {
       return pioneer.id == this.props.currentPioneer
     })
     return ( 
-      <img src={selectedPioneer.img}></img>
+      <img className="pioneer" src={selectedPioneer.img}></img>
     )
   }
 
