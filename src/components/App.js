@@ -11,17 +11,18 @@ class App extends Component {
     }
   }
 
+  
   // componentDidMount() {
-  //   fetch("http://")
-  //     .then(response => response.json())
-  //     .then(data => {
-  //       this.setState({
-  //         pioneers: data.pioneers
-  //       });
-  //     })
-  //     .catch(error => {
-  //       throw new Error(error);
-  //     }); 
+    //   fetch("http://")
+    //     .then(response => response.json())
+    //     .then(data => {
+      //       this.setState({
+        //         pioneers: data.pioneers
+        //       });
+        //     })
+        //     .catch(error => {
+          //       throw new Error(error);
+          //     }); 
   // }
 
   render() {
@@ -30,6 +31,8 @@ class App extends Component {
         <Header />
         <Pioneer 
         pioneers={this.state.pioneers}
+        hydrate={this.hydrateStateWithLocalStorage}
+        saveToLocal={this.saveStateToLocalStorage}
         />
       </div>
     );

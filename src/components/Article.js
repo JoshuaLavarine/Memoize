@@ -42,6 +42,8 @@ class Article extends Component {
         currentPioneer={this.props.currentPioneer}
         pioneers={this.props.pioneers}
         selectPioneer = {this.props.selectPioneer}
+        hydrate={this.props.hydrate}
+        saveToLocal={this.props.saveToLocal}
         />
       )
     default:
@@ -54,6 +56,7 @@ class Article extends Component {
             {this.displayArticle()}
           </article>
           <button onClick={this.displayQuiz}>Go to Quiz</button>
+          <button onClick={this.props.selectPioneer} value={0}>Go Back</button>
         </section>
       )
     }

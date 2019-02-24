@@ -33,7 +33,10 @@ class Pioneer extends Component {
         <Article 
         currentPioneer={this.state.currentPioneer}
         pioneers={this.props.pioneers}
-        selectPioneer = {this.selectPioneer}/>
+        selectPioneer = {this.selectPioneer}
+        hydrate={this.props.hydrate}
+        saveToLocal={this.props.saveToLocal}
+        />
         
       )
     default:
