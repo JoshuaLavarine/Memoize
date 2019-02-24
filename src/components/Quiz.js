@@ -9,7 +9,38 @@ class Quiz extends Component {
       guessesCorrect: 0,
       guessValue: '',
       displayScore: false,
-      enableButton: true
+      enableButton: true,
+      incorrectAnswers: {
+        1: [],
+        2: [],
+        3: [],
+        4: [],
+        5: []
+      }
+    }
+  }
+
+  componentDidMount() {
+    this.hydrateStateWithLocalStorage();
+  }
+
+  hydrateStateWithLocalStorage() {
+    // for all items in state
+    for (let key in this.state) {
+      // if the key exists in localStorage
+      if (localStorage.hasOwnProperty(key)) {
+        // get the key's value from localStorage
+        let value = localStorage.getItem(key);
+
+        // parse the localStorage string and setState
+        try {
+          value = JSON.parse(value);
+          this.setState({ [key]: value });
+        } catch (e) {
+          // handle empty string
+          this.setState({ [key]: value });
+        }
+      }
     }
   }
 
@@ -92,24 +123,27 @@ class Quiz extends Component {
       })
       this.displayScore()
     } else {
-      this.setState({
-        currentQuestion: this.state.currentQuestion + 1,
-        guessValue: '',
-      })
+      let updatedIncorrectAnswers = this.findLocalState() 
+      updatedIncorrectAnswers.push(this.state.currentQuestion)
+      this.setState(prevState => ({
+        incorrectAnswers: {
+            ...prevState.incorrectAnswers,
+          [selectedPioneer.id]: updatedIncorrectAnswers,
+        }
+      }))
+      localStorage.setItem('incorrectAnswers', JSON.stringify(this.state.incorrectAnswers));
       this.displayScore()
     }
+  }
+
+  findLocalState = () => {
+    return this.state.incorrectAnswers[this.props.currentPioneer]
   }
 
   displayScore = () => {
     this.setState({
       displayScore: !this.state.displayScore,
       enableButton: true
-    })
-  }
-
-  enableButton = () => {
-    this.setState({
-      enableButton: false
     })
   }
 
