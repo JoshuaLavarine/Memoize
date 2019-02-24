@@ -8,7 +8,8 @@ class Quiz extends Component {
       currentQuestion: 1,
       guessesCorrect: 0,
       guessValue: '',
-      displayScore: false
+      displayScore: false,
+      enableButton: true
     }
   }
 
@@ -40,8 +41,10 @@ class Quiz extends Component {
     let incorrectChoices = currentQuestion.incorrectAnswers.map(question => {
       return (
         <section>
-          <input type="radio" id={Date.now()} value={question}></input>
-          <label for={Date.now()}>{question}</label>
+          <label onClick={this.enableButton} className="radio-buttons">
+            <input onClick={this.enableButton} type="radio" id={Date.now()} name="radioBtns" value={question}></input>
+            {question}
+          </label>
         </section>
       )
     })
@@ -58,15 +61,17 @@ class Quiz extends Component {
     let correctAnswer = currentQuestion.correctAnswer
     return (
       <section>
-      <input type="radio" id={Date.now()} value={correctAnswer}></input>
-      <label for={Date.now()}>{correctAnswer}</label>
+        <label onClick={this.enableButton} className="radio-buttons">
+          <input onClick={this.enableButton} type="radio" id={Date.now()} name="radioBtns" value={correctAnswer}></input>
+          {correctAnswer}
+        </label>
       </section>
     )
   }
 
   getClickedValue = (event) => {
     this.setState({
-      guessValue: event.target.value
+      guessValue: event.target.value,
     })
   }
 
@@ -97,7 +102,14 @@ class Quiz extends Component {
 
   displayScore = () => {
     this.setState({
-      displayScore: !this.state.displayScore
+      displayScore: !this.state.displayScore,
+      enableButton: true
+    })
+  }
+
+  enableButton = () => {
+    this.setState({
+      enableButton: false
     })
   }
 
@@ -112,6 +124,7 @@ class Quiz extends Component {
           currentPioneer = {this.props.currentPioneer}
           selectPioneer = {this.props.selectPioneer}
           pioneers = {this.props.pioneers}
+          enableButton = {this.enableButton}    
           />
       )
     default:
@@ -120,11 +133,15 @@ class Quiz extends Component {
           <section onClick={this.getClickedValue}>{this.displayPrompt()}</section>
           <section onClick={this.getClickedValue}>{this.displayCorrectAnswer()}</section>
           <section onClick={this.getClickedValue}>{this.displayPossibleAnswers()}</section>
-          <button type="reset" onClick={this.checkCorrectAnswer}>Submit Answer</button>
+          <button disabled={this.state.enableButton} type="submit" onClick={this.checkCorrectAnswer}>Submit Answer</button>
+          <button onClick={this.props.selectPioneer} value={0}>Return to Home Screen</button>
         </form>
       )
     }
   }
 }
+
+
+
 
 export default Quiz;

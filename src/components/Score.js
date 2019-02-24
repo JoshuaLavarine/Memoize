@@ -4,14 +4,8 @@ class Score extends Component {
   constructor() {
     super();
     this.state = {
-      // currentPioneer: null
+      // empty
     }
-  }
-
-  resetCurrentPioneer = () => {
-    this.setState({
-      currentPioneer : 0
-    }) 
   }
 
   render() {
@@ -32,6 +26,7 @@ class Score extends Component {
         <section>
           <p>You scored {this.props.guessesCorrect} out of {this.props.currentQuestion - 1}</p>
           <button onClick={this.props.displayScore}>Next Question</button>
+          <button onClick={this.props.selectPioneer} value={0}>Return to Home Screen</button>
         </section>
       )
     }
