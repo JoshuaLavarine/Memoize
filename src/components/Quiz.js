@@ -125,6 +125,10 @@ class Quiz extends Component {
     } else {
       let updatedIncorrectAnswers = this.findLocalState() 
       updatedIncorrectAnswers.push(this.state.currentQuestion)
+      this.setState({
+        currentQuestion: this.state.currentQuestion + 1,
+        guessValue: '',
+      })
       this.setState(prevState => ({
         incorrectAnswers: {
             ...prevState.incorrectAnswers,
