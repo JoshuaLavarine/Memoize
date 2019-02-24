@@ -25,13 +25,13 @@ class Article extends Component {
   }
 
   render() {
-
     switch(this.state.displayQuiz) {
       case(true):
       return (
         <Quiz 
         currentPioneer={this.props.currentPioneer}
         pioneers={this.props.pioneers}
+        selectPioneer = {this.props.selectPioneer}
         />
       )
     default:

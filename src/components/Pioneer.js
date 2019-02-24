@@ -9,7 +9,6 @@ class Pioneer extends Component {
     }
   }
 
-  
   selectPioneer = (event) => {
     this.setState({
       currentPioneer: event.target.id
@@ -21,7 +20,7 @@ class Pioneer extends Component {
       return (
         <img onClick={this.selectPioneer} src={pioneer.img} id={pioneer.id}></img>
       )
-    });
+    })
   } 
 
   render() {
@@ -30,7 +29,8 @@ class Pioneer extends Component {
       return (
         <Article 
         currentPioneer={this.state.currentPioneer}
-        pioneers={this.props.pioneers}/>
+        pioneers={this.props.pioneers}
+        selectPioneer = {this.selectPioneer}/>
         
       )
     default:

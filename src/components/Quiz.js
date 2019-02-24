@@ -13,7 +13,6 @@ class Quiz extends Component {
   }
 
   makeGuess = () => {
-
   }
 
   displayPrompt = () => {
@@ -23,12 +22,6 @@ class Quiz extends Component {
     let currentQuestion = selectedPioneer.multipleChoice.questions.find(question => {
       return question.id == this.state.currentQuestion
     })
-
-
-
-
-
-    
     return (
       <section>
         <p>Question: {currentQuestion.prompt}</p>
@@ -106,7 +99,6 @@ class Quiz extends Component {
     this.setState({
       displayScore: !this.state.displayScore
     })
-
   }
 
   render() {
@@ -117,17 +109,20 @@ class Quiz extends Component {
           currentQuestion = {this.state.currentQuestion}
           guessesCorrect = {this.state.guessesCorrect}
           displayScore = {this.displayScore}
+          currentPioneer = {this.props.currentPioneer}
+          selectPioneer = {this.props.selectPioneer}
+          pioneers = {this.props.pioneers}
           />
       )
-      default:
-        return (
-          <form>
-            <section onClick={this.getClickedValue}>{this.displayPrompt()}</section>
-            <section onClick={this.getClickedValue}>{this.displayCorrectAnswer()}</section>
-            <section onClick={this.getClickedValue}>{this.displayPossibleAnswers()}</section>
-            <button type="reset" onClick={this.checkCorrectAnswer}>Submit Answer</button>
-          </form>
-        )
+    default:
+      return (
+        <form>
+          <section onClick={this.getClickedValue}>{this.displayPrompt()}</section>
+          <section onClick={this.getClickedValue}>{this.displayCorrectAnswer()}</section>
+          <section onClick={this.getClickedValue}>{this.displayPossibleAnswers()}</section>
+          <button type="reset" onClick={this.checkCorrectAnswer}>Submit Answer</button>
+        </form>
+      )
     }
   }
 }
