@@ -8,7 +8,55 @@ class Quiz extends Component {
       currentQuestion: 1,
       guessesCorrect: 0,
       guessValue: '',
-      displayScore: false
+      displayScore: false,
+      enableButton: true
+    }
+  }
+
+  componentDidMount() {
+    this.hydrateStateWithLocalStorage();
+    // add event listener to save state to localStorage
+    // when user leaves/refreshes the page
+    window.addEventListener(
+      "beforeunload",
+      this.saveStateToLocalStorage
+    );
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener(
+      "beforeunload",
+      this.saveStateToLocalStorage
+    );
+    // saves if component has a chance to unmount
+    this.saveStateToLocalStorage();
+}
+
+
+  hydrateStateWithLocalStorage() {
+    // for all items in state
+    for (let key in this.state) {
+      // if the key exists in localStorage
+      if (localStorage.hasOwnProperty(key)) {
+        // get the key's value from localStorage
+        let value = localStorage.getItem(key);
+        // parse the localStorage string and setState
+        try {
+          value = JSON.parse(value);
+          this.setState({ [key]: value });
+        } catch (e) {
+          // handle empty string
+          this.setState({ [key]: value });
+        }
+      }
+    }
+  }
+
+  saveStateToLocalStorage = () => {
+    // for every item in React state
+    for (let key in this.state) {
+      // save to localStorage
+      localStorage.setItem(key, JSON.stringify(this.state[key]));
     }
   }
 
@@ -40,8 +88,10 @@ class Quiz extends Component {
     let incorrectChoices = currentQuestion.incorrectAnswers.map(question => {
       return (
         <section>
-          <input type="radio" id={Date.now()} value={question}></input>
-          <label for={Date.now()}>{question}</label>
+          <label onChange={this.enableButton} className="radio-buttons">
+            <input onChange={this.enableButton} type="radio" id={Date.now()} name="radioBtns" value={question}></input>
+            {question}
+          </label>
         </section>
       )
     })
@@ -58,15 +108,17 @@ class Quiz extends Component {
     let correctAnswer = currentQuestion.correctAnswer
     return (
       <section>
-      <input type="radio" id={Date.now()} value={correctAnswer}></input>
-      <label for={Date.now()}>{correctAnswer}</label>
+        <label onChange={this.enableButton} className="radio-buttons">
+          <input onChange={this.enableButton} type="radio" id={Date.now()} name="radioBtns" value={correctAnswer}></input>
+          {correctAnswer}
+        </label>
       </section>
     )
   }
 
   getClickedValue = (event) => {
     this.setState({
-      guessValue: event.target.value
+      guessValue: event.target.value,
     })
   }
 
@@ -101,6 +153,12 @@ class Quiz extends Component {
     })
   }
 
+  enableButton = () => {
+    this.setState({
+      enableButton: false
+    })
+  }
+
   render() {
     switch(this.state.displayScore) {
       case(true):
@@ -112,7 +170,8 @@ class Quiz extends Component {
           currentPioneer = {this.props.currentPioneer}
           selectPioneer = {this.props.selectPioneer}
           pioneers = {this.props.pioneers}
-          />
+          hydrate={this.props.hydrate}
+          saveToLocal={this.props.saveToLocal}          />
       )
     default:
       return (
@@ -120,11 +179,15 @@ class Quiz extends Component {
           <section onClick={this.getClickedValue}>{this.displayPrompt()}</section>
           <section onClick={this.getClickedValue}>{this.displayCorrectAnswer()}</section>
           <section onClick={this.getClickedValue}>{this.displayPossibleAnswers()}</section>
-          <button type="reset" onClick={this.checkCorrectAnswer}>Submit Answer</button>
+          <button disabled={this.state.enableButton} type="submit" onClick={this.checkCorrectAnswer}>Submit Answer</button>
+          <button onClick={this.props.selectPioneer} value={0}>Return to Home Screen</button>
         </form>
       )
     }
   }
 }
+
+
+
 
 export default Quiz;
