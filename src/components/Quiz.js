@@ -11,13 +11,23 @@ class Quiz extends Component {
       displayScore: false,
       enableButton: true,
       incorrectAnswers: {
-        1: [],
-        2: [],
-        3: [],
-        4: [],
-        5: []
+        1: [1,2,3,4,5],
+        2: [1,2,3,4,5],
+        3: [1,2,3,4,5],
+        4: [1,2,3,4,5],
+        5: [1,2,3,4]
       }
     }
+  }
+  nextQuestion = () => {
+    let selectedPioneer = this.props.pioneers.pioneersData.find(pioneer => {
+      return pioneer.id == this.props.currentPioneer
+    })
+    let currentQuestion = selectedPioneer.multipleChoice.questions.find(question => {
+      return question.id == this.state.incorrectAnswers[selectedPioneer.id][0]
+    })
+    console.log('this is the question object I want displayed (add id, prompt, correctAnswer or incorrectAnswer)', currentQuestion)
+    return currentQuestion
   }
 
   componentDidMount() {
@@ -48,27 +58,19 @@ class Quiz extends Component {
   }
 
   displayPrompt = () => {
-    let selectedPioneer = this.props.pioneers.pioneersData.find(pioneer => {
-      return pioneer.id == this.props.currentPioneer
-    })
-    let currentQuestion = selectedPioneer.multipleChoice.questions.find(question => {
-      return question.id == this.state.currentQuestion
-    })
+    let currentQuestion = this.nextQuestion()
     return (
       <section>
         <p>Question: {currentQuestion.prompt}</p>
         <p>Possible Answers:</p>
       </section>
     )
+
+
   }
 
   displayPossibleAnswers = () => {
-    let selectedPioneer = this.props.pioneers.pioneersData.find(pioneer => {
-      return pioneer.id == this.props.currentPioneer
-    })
-    let currentQuestion = selectedPioneer.multipleChoice.questions.find(question => {
-      return question.id == this.state.currentQuestion
-    })
+    let currentQuestion = this.nextQuestion()
     let incorrectChoices = currentQuestion.incorrectAnswers.map(question => {
       return (
         <section>
@@ -83,12 +85,7 @@ class Quiz extends Component {
   }
 
   displayCorrectAnswer = () => {
-    let selectedPioneer = this.props.pioneers.pioneersData.find(pioneer => {
-      return pioneer.id == this.props.currentPioneer
-    })
-    let currentQuestion = selectedPioneer.multipleChoice.questions.find(question => {
-      return question.id == this.state.currentQuestion
-    })
+    let currentQuestion = this.nextQuestion()
     let correctAnswer = currentQuestion.correctAnswer
     return (
       <section>
