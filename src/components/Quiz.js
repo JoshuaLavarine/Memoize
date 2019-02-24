@@ -41,8 +41,8 @@ class Quiz extends Component {
     let incorrectChoices = currentQuestion.incorrectAnswers.map(question => {
       return (
         <section>
-          <label onChange={this.enableButton} className="radio-buttons">
-            <input onChange={this.enableButton} type="radio" id={Date.now()} name="radioBtns" value={question}></input>
+          <label onClick={this.enableButton} className="radio-buttons">
+            <input onClick={this.enableButton} type="radio" id={Date.now()} name="radioBtns" value={question}></input>
             {question}
           </label>
         </section>
@@ -61,8 +61,8 @@ class Quiz extends Component {
     let correctAnswer = currentQuestion.correctAnswer
     return (
       <section>
-        <label onChange={this.enableButton} className="radio-buttons">
-          <input onChange={this.enableButton} type="radio" id={Date.now()} name="radioBtns" value={correctAnswer}></input>
+        <label onClick={this.enableButton} className="radio-buttons">
+          <input onClick={this.enableButton} type="radio" id={Date.now()} name="radioBtns" value={correctAnswer}></input>
           {correctAnswer}
         </label>
       </section>
@@ -102,7 +102,8 @@ class Quiz extends Component {
 
   displayScore = () => {
     this.setState({
-      displayScore: !this.state.displayScore
+      displayScore: !this.state.displayScore,
+      enableButton: true
     })
   }
 
@@ -123,8 +124,8 @@ class Quiz extends Component {
           currentPioneer = {this.props.currentPioneer}
           selectPioneer = {this.props.selectPioneer}
           pioneers = {this.props.pioneers}
-          hydrate={this.props.hydrate}
-          saveToLocal={this.props.saveToLocal}          />
+          enableButton = {this.enableButton}    
+          />
       )
     default:
       return (
