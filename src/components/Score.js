@@ -8,12 +8,6 @@ class Score extends Component {
     }
   }
 
-  resetCurrentPioneer = () => {
-    this.setState({
-      currentPioneer : 0
-    }) 
-  }
-
   render() {
     let currentPioneer = this.props.pioneers.pioneersData.find(pioneer => {
       return pioneer.id == this.props.currentPioneer

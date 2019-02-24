@@ -101,6 +101,18 @@ class Quiz extends Component {
     })
   }
 
+  enableButton = () => {
+    this.setState({
+      enableButton: false
+    })
+  }
+
+  resetQuestionCount = () => {
+    this.setState({
+      currentQuestion: 1
+    })
+  }
+
   render() {
     switch(this.state.displayScore) {
       case(true):
@@ -112,7 +124,8 @@ class Quiz extends Component {
           currentPioneer = {this.props.currentPioneer}
           selectPioneer = {this.props.selectPioneer}
           pioneers = {this.props.pioneers}
-          />
+          resetQuestionCount = {this.resetQuestionCount}
+     />
       )
     default:
       return (
