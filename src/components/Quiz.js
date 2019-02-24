@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Score from './Score'
 
 class Quiz extends Component {
   constructor() {
@@ -6,7 +7,8 @@ class Quiz extends Component {
     this.state = {
       currentQuestion: 1,
       guessesCorrect: 0,
-      guessValue: ''
+      guessValue: '',
+      displayScore: false
     }
   }
 
@@ -21,6 +23,12 @@ class Quiz extends Component {
     let currentQuestion = selectedPioneer.multipleChoice.questions.find(question => {
       return question.id == this.state.currentQuestion
     })
+
+
+
+
+
+    
     return (
       <section>
         <p>Question: {currentQuestion.prompt}</p>
@@ -82,25 +90,45 @@ class Quiz extends Component {
       this.setState({
         guessesCorrect: this.state.guessesCorrect + 1,
         currentQuestion: this.state.currentQuestion + 1,
-        guessValue: ''
+        guessValue: '',
       })
+      this.displayScore()
     } else {
       this.setState({
         currentQuestion: this.state.currentQuestion + 1,
-        guessValue: ''
+        guessValue: '',
       })
+      this.displayScore()
     }
   }
 
+  displayScore = () => {
+    this.setState({
+      displayScore: !this.state.displayScore
+    })
+
+  }
+
   render() {
-    return (
-      <form>
-        <section onClick={this.getClickedValue}>{this.displayPrompt()}</section>
-        <section onClick={this.getClickedValue}>{this.displayCorrectAnswer()}</section>
-        <section onClick={this.getClickedValue}>{this.displayPossibleAnswers()}</section>
-        <button type="reset" onClick={this.checkCorrectAnswer}>Submit Answer</button>
-      </form>
-    )
+    switch(this.state.displayScore) {
+      case(true):
+      return (
+          <Score
+          currentQuestion = {this.state.currentQuestion}
+          guessesCorrect = {this.state.guessesCorrect}
+          displayScore = {this.displayScore}
+          />
+      )
+      default:
+        return (
+          <form>
+            <section onClick={this.getClickedValue}>{this.displayPrompt()}</section>
+            <section onClick={this.getClickedValue}>{this.displayCorrectAnswer()}</section>
+            <section onClick={this.getClickedValue}>{this.displayPossibleAnswers()}</section>
+            <button type="reset" onClick={this.checkCorrectAnswer}>Submit Answer</button>
+          </form>
+        )
+    }
   }
 }
 
