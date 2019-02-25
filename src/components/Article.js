@@ -55,8 +55,10 @@ class Article extends Component {
           <article className='pioneer-article'>
             {this.displayArticle()}
           </article>
-          <button onClick={this.displayQuiz}>Go to Quiz</button>
-          <button onClick={this.props.selectPioneer} value={0}>Go Back</button>
+          <section className="button-container">
+            <button className="button-back" onClick={this.props.selectPioneer} value={0}>Go Back</button>
+            <button className="button-quiz" onClick={this.displayQuiz}>Go to Quiz</button>
+          </section>
         </section>
       )
     }

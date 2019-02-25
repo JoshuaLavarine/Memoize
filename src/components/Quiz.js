@@ -189,8 +189,10 @@ class Quiz extends Component {
           <section onClick={this.getClickedValue}>{this.displayPrompt()}</section>
           <section onClick={this.getClickedValue}>{this.displayCorrectAnswer()}</section>
           <section onClick={this.getClickedValue}>{this.displayPossibleAnswers()}</section>
-          <button disabled={this.state.enableButton} type="submit" onClick={this.checkCorrectAnswer}>Submit Answer</button>
-          <button onClick={this.props.selectPioneer} value={0}>Return to Home Screen</button>
+          <section className="button-container">
+            <button className="button-back" onClick={this.props.selectPioneer} value={0}>Return to Home Screen</button>
+            <button className="button-quiz" disabled={this.state.enableButton} type="submit" onClick={this.checkCorrectAnswer}>Submit Answer</button>
+          </section>
         </form>
       )
     }

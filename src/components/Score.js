@@ -15,17 +15,21 @@ class Score extends Component {
     switch(this.props.currentQuestionIndex === this.props.arrayLength.length) {
       case(true):
       return (
-        <section>
+        <section className="article-layout-correct">
             <p>You scored {this.props.guessesCorrect} out of {this.props.currentUserGuess}</p>
-            <button onClick={this.props.selectPioneer} id={0}>Choose New Pioneer</button>
+            <section className="button-container-correct">
+              <button className="button-quiz-correct" onClick={this.props.selectPioneer} id={0}>Choose New Pioneer</button>
+            </section>
         </section>
       )
     default:
       return (
-        <section>
+        <section className="article-layout">
           <p>You scored {this.props.guessesCorrect} out of {this.props.currentUserGuess}</p>
-          <button onClick={this.props.displayScore}>Next Question</button>
-          <button onClick={this.props.selectPioneer} value={0}>Return to Home Screen</button>
+           <section className="button-container">
+            <button className="button-back" onClick={this.props.selectPioneer} value={0}>Return to Home Screen</button>
+            <button className="button-quiz" onClick={this.props.displayScore}>Next Question</button>
+          </section> 
         </section>
       )
     }

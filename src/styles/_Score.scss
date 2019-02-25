@@ -1,0 +1,38 @@
+.button-quiz {
+  @include buttons(#3498dbb3);
+  margin-left: 50px;
+}
+
+.button-back {
+  @include buttons(#ad0008);
+  margin-right: 50px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.article-layout {
+  @include article-quiz-layout();
+  p {
+    margin-bottom: 7px;
+    line-height: 1.25;
+    text-align: center;
+  }
+}
+
+.article-layout-correct {
+  @include article-quiz-layout();
+  p {
+    margin-bottom: 7px;
+    line-height: 1.25;
+    text-align: center;
+  }
+}
+
+.button-quiz-correct {
+  @include buttons(#3498dbb3);
+  display: flex;
+  justify-content: center;
+}

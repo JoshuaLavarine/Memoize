@@ -1,6 +1,7 @@
 .pioneer-img {
   width: 50%;
   background-size: cover;
+  cursor: pointer;
 }
 
 .contain-pioneers {
@@ -17,4 +18,19 @@
   opacity: 1;
   border-radius: 25px;
   margin-top: 25px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.button-quiz {
+  @include buttons(#3498dbb3);
+  margin-left: 50px;
+}
+
+.button-back {
+  @include buttons(#ad0008);
+  margin-right: 50px;
 }
