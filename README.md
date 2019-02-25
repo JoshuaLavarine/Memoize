@@ -1,22 +1,22 @@
-## Memoize!
+## Memoize - A Quiz
 
 
-## What was learned?
+## What I learned
 
 
-## Challenges we faced
+## Challenges faced
 
 
-## Project "Wins"
+## "Wins"
 
 
-## Screenshots of Project
+## Screenshots
 
 
-## Future Implementation Plans
+## Future Implementations
 
 
-## Tools Used to Build Project
+## Tools
 [VSCode](https://code.visualstudio.com/)  
 [React Library](https://reactjs.org/)  
 [Enzyme](https://airbnb.io/enzyme/)   
