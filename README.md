@@ -1,4 +1,4 @@
-## Memoize - A Quiz
+## Memoize
 
 
 ## What I learned
