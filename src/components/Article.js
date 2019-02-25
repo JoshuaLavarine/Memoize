@@ -48,11 +48,11 @@ class Article extends Component {
       )
     default:
       return (
-        <section>
-          <article>
+        <section className="complete-article">
+          <article className='pioneer-img-article'>
             {this.displayPioneer()}
           </article>
-          <article>
+          <article className='pioneer-article'>
             {this.displayArticle()}
           </article>
           <button onClick={this.displayQuiz}>Go to Quiz</button>

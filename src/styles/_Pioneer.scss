@@ -5,7 +5,7 @@
 
 .contain-pioneers {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  flex-direction: column;
 }
 
 .pioneer-card {
