@@ -41,10 +41,12 @@ class Pioneer extends Component {
       )
     default:
       return (
-        <article>
+        <article className="pioneer-layout">
           <p>Please a pioneer's image to learn more.</p>
           <section className="contain-pioneers">
-            {this.displayPioneers()}
+            <section className="individual-pioneers"> 
+              {this.displayPioneers()}
+            </section>
           </section>
         </article>
       )
