@@ -19,6 +19,7 @@ class Pioneer extends Component {
     return this.props.pioneers.pioneersData.map(pioneer => {
       return (
         <section key={pioneer.pioneer} className="pioneer-card">
+          {/* <div styles="background-image: url({pioneer.img})"></div> */}
           <img className="pioneer-img" onClick={this.selectPioneer} src={pioneer.img} id={pioneer.id}></img>
           <p>{pioneer.pioneer}</p>
         </section>
