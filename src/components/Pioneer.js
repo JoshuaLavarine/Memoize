@@ -16,7 +16,7 @@ class Pioneer extends Component {
   }
 
   displayPioneers = () => {
-    return this.props.pioneers.pioneersData.map(pioneer => {
+    return this.props.pioneers.map(pioneer => {
       return (
         <section key={pioneer.pioneer} className="pioneer-card">
           {/* <div styles="background-image: url({pioneer.img})"></div> */}

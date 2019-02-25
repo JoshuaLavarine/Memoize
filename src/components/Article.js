@@ -47,7 +47,7 @@ class Article extends Component {
   }
 
   displayPioneer = () => {
-    let selectedPioneer = this.props.pioneers.pioneersData.find(pioneer => {
+    let selectedPioneer = this.props.pioneers.find(pioneer => {
       return pioneer.id == this.props.currentPioneer
     })
     return ( 
@@ -56,7 +56,7 @@ class Article extends Component {
   }
 
   displayArticle = () => {
-    let selectedPioneer = this.props.pioneers.pioneersData.find(pioneer => {
+    let selectedPioneer = this.props.pioneers.find(pioneer => {
       return pioneer.id == this.props.currentPioneer
     })
     let allParagraphs = selectedPioneer.paragraphs.map(paragraph => {
@@ -67,7 +67,7 @@ class Article extends Component {
 
 
   resetIncorrectAnswers = () => {
-    let selectedPioneer = this.props.pioneers.pioneersData.find(pioneer => {
+    let selectedPioneer = this.props.pioneers.find(pioneer => {
       return pioneer.id == this.props.currentPioneer
     })
     // console.log('conditional', this.state.incorrectAnswers[selectedPioneer.id].length)

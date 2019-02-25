@@ -15,7 +15,7 @@ class Quiz extends Component {
   }
 
   nextQuestion = () => {
-    let selectedPioneer = this.props.pioneers.pioneersData.find(pioneer => {
+    let selectedPioneer = this.props.pioneers.find(pioneer => {
       return pioneer.id == this.props.currentPioneer
     })
     let currentQuestion = selectedPioneer.multipleChoice.questions.find(question => {
@@ -25,7 +25,7 @@ class Quiz extends Component {
   }
 
   selectedPioneer = () => {
-    let selectedPioneer = this.props.pioneers.pioneersData.find(pioneer => {
+    let selectedPioneer = this.props.pioneers.find(pioneer => {
       return pioneer.id == this.props.currentPioneer
     })
     return selectedPioneer
@@ -101,7 +101,7 @@ class Quiz extends Component {
 
   checkCorrectAnswer = (e) => {
     e.preventDefault();
-    let selectedPioneer = this.props.pioneers.pioneersData.find(pioneer => {
+    let selectedPioneer = this.props.pioneers.find(pioneer => {
       return pioneer.id == this.props.currentPioneer
     })
     let currentQuestion = selectedPioneer.multipleChoice.questions.find(question => {
@@ -158,7 +158,7 @@ class Quiz extends Component {
   // }
 
   // resetIncorrectAnswers = () => {
-  //   let selectedPioneer = this.props.pioneers.pioneersData.find(pioneer => {
+  //   let selectedPioneer = this.props.pioneers.find(pioneer => {
   //     return pioneer.id == this.props.currentPioneer
   //   })
   //   this.setState(prevState => ({
@@ -196,7 +196,7 @@ class Quiz extends Component {
           <section onClick={this.getClickedValue}>{this.displayPossibleAnswers()}</section>
           <section className="button-container">
             <button className="button-back" onClick={this.props.selectPioneer} value={0}>Return to Home Screen</button>
-            <button className="button-quiz" disabled={this.state.enableButton} type="submit" onClick={this.checkCorrectAnswer}>Submit Answer</button>
+            <button className="button-quiz" disabled={this.state.enableButton} onClick={this.checkCorrectAnswer}>Submit Answer</button>
           </section>
         </form>
       )
