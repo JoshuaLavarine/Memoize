@@ -8,6 +8,11 @@ class Score extends Component {
     }
   }
 
+  // selectPioneerAndResetIncorrectAnswers = () => {
+  //   this.props.selectPioneer()
+  //   this.props.resetIncorrectAnswers()
+  // }
+
   render() {
     let currentPioneer = this.props.pioneers.pioneersData.find(pioneer => {
       return pioneer.id == this.props.currentPioneer
