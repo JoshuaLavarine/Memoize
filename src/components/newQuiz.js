@@ -5,28 +5,27 @@ class Quiz extends Component {
   constructor() {
     super();
     this.state = {
-      currentUserGuess: 0,
-      currentQuestionIndex: 0,
+      currentGuess: 0,
+      currentQuestion: 0,
       guessesCorrect: 0,
       guessValue: '',
       displayScore: false,
       enableButton: true,
       incorrectAnswers: {
-        1: [1, 2, 3, 4, 5],
-        2: [1, 2, 3, 4, 5],
-        3: [1, 2, 3, 4, 5],
-        4: [1, 2, 3, 4],
-        5: [1, 2, 3, 4, 5]
+        1: [1,2,3,4,5],
+        2: [1,2,3,4,5],
+        3: [1,2,3,4,5],
+        4: [1,2,3,4,5],
+        5: [1,2,3,4]
       }
     }
   }
-
   nextQuestion = () => {
     let selectedPioneer = this.props.pioneers.pioneersData.find(pioneer => {
       return pioneer.id == this.props.currentPioneer
     })
     let currentQuestion = selectedPioneer.multipleChoice.questions.find(question => {
-      return question.id == this.state.incorrectAnswers[selectedPioneer.id][this.state.currentQuestionIndex]
+      return question.id == this.state.incorrectAnswers[selectedPioneer.id][this.state.currentQuestion]
     })
     console.log('this is the question object I want displayed (add id, prompt, correctAnswer or incorrectAnswer)', currentQuestion)
     return currentQuestion
@@ -61,6 +60,9 @@ class Quiz extends Component {
         }
       }
     }
+  }
+
+  makeGuess = () => {
   }
 
   displayPrompt = () => {
@@ -115,14 +117,22 @@ class Quiz extends Component {
       return pioneer.id == this.props.currentPioneer
     })
     let currentQuestion = selectedPioneer.multipleChoice.questions.find(question => {
-      return question.id == this.state.incorrectAnswers[selectedPioneer.id][this.state.currentQuestionIndex]
+      return question.id == this.state.incorrectAnswers[selectedPioneer.id][this.state.currentQuestion]
     })
     let correctAnswer = currentQuestion.correctAnswer
+
+
+
     if (this.state.guessValue === correctAnswer) {
       let updatedIncorrectAnswers = this.state.incorrectAnswers[this.props.currentPioneer];
+      
+      console.log('latest set state of incorrect answers', updatedIncorrectAnswers)
+
       let index = updatedIncorrectAnswers.indexOf(this.nextQuestion().id)
+      console.log('index of the question that i want to delete', index)
 
       updatedIncorrectAnswers.splice(index, 1)
+      console.log('after splice updatedInAnswers', updatedIncorrectAnswers)
 
 
       this.setState(prevState => ({
@@ -133,22 +143,37 @@ class Quiz extends Component {
       }))
       this.setState({
         guessesCorrect: this.state.guessesCorrect + 1,
-        currentUserGuess: this.state.currentUserGuess + 1,
+        currentQuestion: this.state.currentGuess + 1,
         guessValue: '',
       })
-      localStorage.setItem('incorrectAnswers', JSON.stringify(this.state.incorrectAnswers));
       this.displayScore()
+
+
+
+
+
     } else {
       let updatedIncorrectAnswers = this.state.incorrectAnswers[this.props.currentPioneer];
+      // updatedIncorrectAnswers.push(this.state.currentQuestion)
       this.setState({
-        currentQuestionIndex: this.state.currentQuestionIndex + 1,
+        currentQuestion: this.state.currentQuestion + 1,
         guessValue: '',
-        currentUserGuess: this.state.currentUserGuess + 1
+        currentQuestion: this.state.currentGuess + 1,
       })
+      // this.setState(prevState => ({
+      //   incorrectAnswers: {
+      //       ...prevState.incorrectAnswers,
+      //     [selectedPioneer.id]: updatedIncorrectAnswers,
+      //   }
+      // }))
       localStorage.setItem('incorrectAnswers', JSON.stringify(this.state.incorrectAnswers));
       this.displayScore()
     }
   }
+
+  // findLocalState = () => {
+  //   return 
+  // }
 
   displayScore = () => {
     this.setState({
@@ -165,7 +190,7 @@ class Quiz extends Component {
 
   resetQuestionCount = () => {
     this.setState({
-      currentQuestionIndex: 1
+      currentQuestion: 1
     })
   }
 
@@ -174,7 +199,7 @@ class Quiz extends Component {
       case(true):
       return (
           <Score
-          currentQuestion = {this.state.currentQuestionIndex}
+          currentQuestion = {this.state.currentQuestion}
           guessesCorrect = {this.state.guessesCorrect}
           displayScore = {this.displayScore}
           currentPioneer = {this.props.currentPioneer}
@@ -182,9 +207,8 @@ class Quiz extends Component {
           pioneers = {this.props.pioneers}
           resetQuestionCount = {this.resetQuestionCount}
           enableButton = {this.enableButton}    
-          currentUserGuess = {this.state.currentUserGuess}
-          currentQuestionIndex = {this.state.currentQuestionIndex}
-          arrayLength = {this.state.incorrectAnswers[this.selectedPioneer().id]}
+          currentGuess = {this.state.currentGuess}
+          arrayLength = {this.state.incorrectAnswers[this.selectedPioneer().id].length}
           />
       )
     default:

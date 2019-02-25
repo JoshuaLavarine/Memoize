@@ -220,7 +220,7 @@ const pioneersData = [
 					"incorrectAnswers": ["The Lovelace Award", "The Hopper Award", "The Turing Award"]
         },
 				{
-					"id": 4,
+					"id": 5,
 					"prompt": "Which US Government Office did Pahlka temporarily hold at the Office of Science and Technology Policy?",
 					"correctAnswer": "Deputy Chief Technology Officer for Government Innovation",
 					"incorrectAnswers": ["Head of US Naval Innovation", "Deputy to the Director of Technology", "Chief Officer of Science and Innovation"]
