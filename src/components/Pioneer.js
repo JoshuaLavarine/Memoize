@@ -35,8 +35,6 @@ class Pioneer extends Component {
         currentPioneer={this.state.currentPioneer}
         pioneers={this.props.pioneers}
         selectPioneer = {this.selectPioneer}
-        hydrate={this.props.hydrate}
-        saveToLocal={this.props.saveToLocal}
         />
         
       )

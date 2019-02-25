@@ -98,8 +98,6 @@ class Article extends Component {
         currentPioneer={this.props.currentPioneer}
         pioneers={this.props.pioneers}
         selectPioneer = {this.props.selectPioneer}
-        hydrate={this.props.hydrate}
-        saveToLocal={this.props.saveToLocal}
         incorrectAnswers = {this.state.incorrectAnswers}
         />
       )

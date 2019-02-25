@@ -151,24 +151,6 @@ class Quiz extends Component {
     })
   }
 
-  // resetQuestionCount = () => {
-  //   this.setState({
-  //     currentQuestionIndex: 1
-  //   })
-  // }
-
-  // resetIncorrectAnswers = () => {
-  //   let selectedPioneer = this.props.pioneers.find(pioneer => {
-  //     return pioneer.id == this.props.currentPioneer
-  //   })
-  //   this.setState(prevState => ({
-  //     incorrectAnswers: {
-  //         ...prevState.incorrectAnswers,
-  //       [selectedPioneer.id]: [1, 2, 3, 4, 5]
-  //     }
-  //   }))
-  // }
-
   render() {
     switch(this.state.displayScore) {
       case(true):
@@ -180,12 +162,9 @@ class Quiz extends Component {
           currentPioneer = {this.props.currentPioneer}
           selectPioneer = {this.props.selectPioneer}
           pioneers = {this.props.pioneers}
-          resetQuestionCount = {this.resetQuestionCount}
-          enableButton = {this.enableButton}    
           currentUserGuess = {this.state.currentUserGuess}
           currentQuestionIndex = {this.state.currentQuestionIndex}
-          arrayLength = {this.props.incorrectAnswers[this.selectedPioneer().id]}
-          resetIncorrectAnswers = {this.resetIncorrectAnswers}
+          incorrectAnswerLength = {this.props.incorrectAnswers[this.selectedPioneer().id]}
           />
       )
     default:

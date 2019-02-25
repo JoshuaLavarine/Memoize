@@ -8,16 +8,11 @@ class Score extends Component {
     }
   }
 
-  // selectPioneerAndResetIncorrectAnswers = () => {
-  //   this.props.selectPioneer()
-  //   this.props.resetIncorrectAnswers()
-  // }
-
   render() {
     let currentPioneer = this.props.pioneers.find(pioneer => {
       return pioneer.id == this.props.currentPioneer
     })
-    switch(this.props.currentQuestionIndex === this.props.arrayLength.length) {
+    switch(this.props.currentQuestionIndex === this.props.incorrectAnswerLength.length) {
       case(true):
       return (
         <section className="article-layout-correct">

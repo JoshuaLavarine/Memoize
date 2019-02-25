@@ -31,8 +31,6 @@ class App extends Component {
         <Header />
         <Pioneer 
         pioneers={this.state.pioneers}
-        hydrate={this.hydrateStateWithLocalStorage}
-        saveToLocal={this.saveStateToLocalStorage}
         />
       </div>
     );
