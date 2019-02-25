@@ -15,7 +15,7 @@ class Quiz extends Component {
         1: [1, 2, 3, 4, 5],
         2: [1, 2, 3, 4, 5],
         3: [1, 2, 3, 4, 5],
-        4: [1, 2, 3, 4],
+        4: [1, 2, 3, 4, 5],
         5: [1, 2, 3, 4, 5]
       }
     }
@@ -71,8 +71,6 @@ class Quiz extends Component {
         <p>Possible Answers:</p>
       </section>
     )
-
-
   }
 
   displayPossibleAnswers = () => {
@@ -123,8 +121,6 @@ class Quiz extends Component {
       let index = updatedIncorrectAnswers.indexOf(this.nextQuestion().id)
 
       updatedIncorrectAnswers.splice(index, 1)
-
-
       this.setState(prevState => ({
         incorrectAnswers: {
             ...prevState.incorrectAnswers,

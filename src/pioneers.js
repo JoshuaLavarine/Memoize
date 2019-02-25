@@ -177,7 +177,13 @@ const pioneersData = [
 					"prompt": "Which award did Berners-Lee receive for 'inventing the World Wide Web, the first web browser, and the fundamental protocols and algorithms allowing the Web to scale’?",
 					"correctAnswer": "The Turing Award",
 					"incorrectAnswers": ["The Lovelace Award", "The Hopper Award", "The Queen Elizabeth II Award"]
-        }
+				},
+				{
+					"id": 5,
+					"prompt": "Berners-Lee is the director of which organization?",
+					"correctAnswer": "The World Wide Web Consortium (W3C)",
+					"incorrectAnswers": ["WC3 Schools", "The Internet Engineering Task Force (IETF)", "The Internet Engineering Steering Group (IESG)"]
+				}
 			]
 		}
   },

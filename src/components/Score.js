@@ -12,7 +12,6 @@ class Score extends Component {
     let currentPioneer = this.props.pioneers.pioneersData.find(pioneer => {
       return pioneer.id == this.props.currentPioneer
     })
-    console.log('systematic you fucker', this.props.arrayLength)
     switch(this.props.currentQuestionIndex === this.props.arrayLength.length) {
       case(true):
       return (
