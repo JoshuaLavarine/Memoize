@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Score should match the snapshot with all data passed in 1`] = `
+<section
+  className="article-layout"
+>
+  <p>
+    You scored 
+    2
+     out of 
+    1
+  </p>
+  <section
+    className="button-container"
+  >
+    <button
+      className="button-back"
+      onClick={[MockFunction]}
+      value={0}
+    >
+      Return to Home Screen
+    </button>
+    <button
+      className="button-quiz"
+      onClick={[MockFunction]}
+    >
+      Next Question
+    </button>
+  </section>
+</section>
+`;

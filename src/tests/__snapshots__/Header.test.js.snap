@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header should match the snapshot with all data passed in 1`] = `
+<div
+  className="Header"
+>
+  <h1>
+    The Software Pioneers
+  </h1>
+  <h2>
+    Fixing bugs since September 9th, 1945
+  </h2>
+</div>
+`;

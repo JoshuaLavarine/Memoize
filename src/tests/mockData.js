@@ -1,4 +1,4 @@
-const pioneersData = [
+export const pioneers = [
 	{
 		"pioneer": "Grace Hopper",
 		"id": 1,
@@ -235,7 +235,3 @@ const pioneersData = [
 		}
   }
 ]
-
-module.exports = {
-	pioneersData
-} 

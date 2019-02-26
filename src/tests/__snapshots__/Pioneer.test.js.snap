@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pioneer should match the snapshot with all data passed in 1`] = `
+<article
+  className="pioneer-layout"
+>
+  <p>
+    Please a pioneer's image to learn more.
+  </p>
+  <section
+    className="contain-pioneers"
+  >
+    <section
+      className="individual-pioneers"
+    >
+      <section
+        className="pioneer-card"
+        key="Grace Hopper"
+      >
+        <img
+          className="pioneer-img"
+          id={1}
+          onClick={[Function]}
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Commodore_Grace_M._Hopper%2C_USN_%28covered%29.jpg/440px-Commodore_Grace_M._Hopper%2C_USN_%28covered%29.jpg"
+        />
+        <p>
+          Grace Hopper
+        </p>
+      </section>
+      <section
+        className="pioneer-card"
+        key="Augusta Ada King, Countess of Lovelace"
+      >
+        <img
+          className="pioneer-img"
+          id={2}
+          onClick={[Function]}
+          src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Ada_Byron_daguerreotype_by_Antoine_Claudet_1843_or_1850.jpg"
+        />
+        <p>
+          Augusta Ada King, Countess of Lovelace
+        </p>
+      </section>
+      <section
+        className="pioneer-card"
+        key="Alan Turing"
+      >
+        <img
+          className="pioneer-img"
+          id={3}
+          onClick={[Function]}
+          src="https://i.redd.it/51dcpxhdwcox.jpg"
+        />
+        <p>
+          Alan Turing
+        </p>
+      </section>
+      <section
+        className="pioneer-card"
+        key="Timothy John Berners-Lee"
+      >
+        <img
+          className="pioneer-img"
+          id={4}
+          onClick={[Function]}
+          src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Sir_Tim_Berners-Lee_%28cropped%29.jpg"
+        />
+        <p>
+          Timothy John Berners-Lee
+        </p>
+      </section>
+      <section
+        className="pioneer-card"
+        key="Jennifer Pahlka"
+      >
+        <img
+          className="pioneer-img"
+          id={5}
+          onClick={[Function]}
+          src="http://www.greatthoughtstreasury.com/sites/default/files/Jennifer-Pahlka1%5B1%5D.jpg"
+        />
+        <p>
+          Jennifer Pahlka
+        </p>
+      </section>
+    </section>
+  </section>
+</article>
+`;

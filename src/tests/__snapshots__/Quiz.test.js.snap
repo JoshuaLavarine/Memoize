@@ -1,0 +1,105 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Quiz should match the snapshot with all data passed in 1`] = `
+<form>
+  <section
+    onClick={[Function]}
+  >
+    <section>
+      <p>
+        Question: 
+        At which university did Grace Hopper complete her Ph.D?
+      </p>
+      <p>
+        Possible Answers:
+      </p>
+    </section>
+  </section>
+  <section
+    onClick={[Function]}
+  >
+    <section>
+      <label
+        className="radio-buttons"
+        onClick={[Function]}
+      >
+        <input
+          id={1551140717394}
+          name="radioBtns"
+          onClick={[Function]}
+          type="radio"
+          value="Yale"
+        />
+        Yale
+      </label>
+    </section>
+  </section>
+  <section
+    onClick={[Function]}
+  >
+    <section>
+      <label
+        className="radio-buttons"
+        onClick={[Function]}
+      >
+        <input
+          id={1551140717394}
+          name="radioBtns"
+          onClick={[Function]}
+          type="radio"
+          value="Harvard"
+        />
+        Harvard
+      </label>
+    </section>
+    <section>
+      <label
+        className="radio-buttons"
+        onClick={[Function]}
+      >
+        <input
+          id={1551140717394}
+          name="radioBtns"
+          onClick={[Function]}
+          type="radio"
+          value="Princeton"
+        />
+        Princeton
+      </label>
+    </section>
+    <section>
+      <label
+        className="radio-buttons"
+        onClick={[Function]}
+      >
+        <input
+          id={1551140717394}
+          name="radioBtns"
+          onClick={[Function]}
+          type="radio"
+          value="Louisiana State University"
+        />
+        Louisiana State University
+      </label>
+    </section>
+  </section>
+  <section
+    className="button-container"
+  >
+    <button
+      className="button-back"
+      onClick={[MockFunction]}
+      value={0}
+    >
+      Return to Home Screen
+    </button>
+    <button
+      className="button-quiz"
+      disabled={true}
+      onClick={[Function]}
+    >
+      Submit Answer
+    </button>
+  </section>
+</form>
+`;

@@ -1,14 +1,16 @@
 import React from "react";
-import App from "../Components/App";
+import Pioneer from "../Components/Pioneer";
 import { shallow } from "enzyme";
+import { pioneers } from "./mockData";
 
-describe("App", () => {
-
+describe("Pioneer", () => {
   let wrapper;
 
   beforeEach(() => {
     wrapper = shallow(
-      <App />
+      <Pioneer 
+      pioneers={pioneers}
+      />   
     );
   });
 	
@@ -17,6 +19,8 @@ describe("App", () => {
   });
 
   it("should have a proper default state", () => {
-    expect(wrapper.state()).toEqual({ pioneers : [] });
-  });
+    expect(wrapper.state()).toEqual({ 
+			currentPioneer: 0
+		});
+	});
 });

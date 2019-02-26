@@ -1,3 +1,58 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Article should match the snapshot with all data passed in 1`] = `undefined`;
+exports[`Article should match the snapshot with all data passed in 1`] = `
+<section
+  className="complete-article"
+>
+  <article
+    className="pioneer-img-article"
+  >
+    <img
+      className="pioneer"
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Commodore_Grace_M._Hopper%2C_USN_%28covered%29.jpg/440px-Commodore_Grace_M._Hopper%2C_USN_%28covered%29.jpg"
+    />
+  </article>
+  <article
+    className="pioneer-article"
+  >
+    <p>
+      Grace Brewster Murray Hopper was an American computer scientist and United States Navy rear admiral. One of the first programmers of the Harvard Mark I computer, she was a pioneer of computer programming who invented one of the first compiler related tools. She popularized the idea of machine-independent programming languages, which led to the development of COBOL, an early high-level programming language still in use today.
+    </p>
+    <p>
+      Prior to joining the Navy, Hopper attained a Ph.D. in mathematics from Yale University and was a professor of mathematics at Vassar College. Hopper joined the Navy Reserves and began computing career in 1944 when she worked on the Harvard Mark I team.
+    </p>
+    <p>
+      In 1949, Grace was part of the team that developed the UNIVAC I computer. She believed that a programming language based on English was possible and during this time, she started working on a complier. Her compiler converted English terms into machine code understood by computers. By 1952, Hopper had finished her program linker (originally called a compiler).
+    </p>
+    <p>
+      In 1954, she was appointed to lead the department for automatic programming, and she led the release of some of the first compiled languages like FLOW-MATIC.
+    </p>
+    <p>
+      In 1959, was consulted to guide the creation of a machine-independent programming language. This led to the COBOL language, which was inspired by her idea of a language being based on English words.
+    </p>
+    <p>
+      In 1966, she retired from the Naval Reserve, but in 1967, the Navy recalled her to active duty. She retired from the Navy in 1986 and found work as a consultant for the Digital Equipment Corporation, sharing her computing experiences.
+    </p>
+    <p>
+      During her lifetime, Hopper was awarded 40 honorary degrees from universities across the world. A college at Yale University was renamed in her honor. In 1991, she received the National Medal of Technology. She was also posthumously awarded the Presidential Medal of Freedom by in November of 2016.
+    </p>
+  </article>
+  <section
+    className="button-container"
+  >
+    <button
+      className="button-back"
+      onClick={[MockFunction]}
+      value={0}
+    >
+      Go Back
+    </button>
+    <button
+      className="button-quiz"
+      onClick={[Function]}
+    >
+      Go to Quiz
+    </button>
+  </section>
+</section>
+`;

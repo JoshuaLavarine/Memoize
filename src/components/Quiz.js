@@ -156,7 +156,7 @@ class Quiz extends Component {
       case(true):
       return (
           <Score
-          currentQuestion = {this.state.currentQuestionIndex}
+          // currentQuestion = {this.state.currentQuestionIndex}
           guessesCorrect = {this.state.guessesCorrect}
           displayScore = {this.displayScore}
           currentPioneer = {this.props.currentPioneer}
@@ -164,7 +164,7 @@ class Quiz extends Component {
           pioneers = {this.props.pioneers}
           currentUserGuess = {this.state.currentUserGuess}
           currentQuestionIndex = {this.state.currentQuestionIndex}
-          incorrectAnswerLength = {this.props.incorrectAnswers[this.selectedPioneer().id]}
+          incorrectAnswers = {this.props.incorrectAnswers[this.selectedPioneer().id]}
           />
       )
     default:
