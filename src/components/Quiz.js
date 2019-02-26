@@ -101,13 +101,19 @@ class Quiz extends Component {
 
   checkCorrectAnswer = (e) => {
     e.preventDefault();
-    let selectedPioneer = this.selectedPioneer();
     let currentQuestion = this.nextQuestion();
     let correctAnswer = currentQuestion.correctAnswer
     if (this.state.guessValue === correctAnswer) {
-      let updatedIncorrectAnswers = this.props.incorrectAnswers[this.props.currentPioneer];
+      this.setCorrectAnswerState()
+    } else {
+      this.setIncorrectAnswerState()
+    }
+  }
+  
+  setCorrectAnswerState = () => {
+    let selectedPioneer = this.selectedPioneer();
+    let updatedIncorrectAnswers = this.props.incorrectAnswers[this.props.currentPioneer];
       let index = updatedIncorrectAnswers.indexOf(this.nextQuestion().id)
-
       updatedIncorrectAnswers.splice(index, 1)
       this.setState(prevState => ({
         incorrectAnswers: {
@@ -122,16 +128,16 @@ class Quiz extends Component {
       })
       localStorage.setItem('incorrectAnswers', JSON.stringify(this.props.incorrectAnswers));
       this.displayScore()
-    } else {
-      let updatedIncorrectAnswers = this.props.incorrectAnswers[this.props.currentPioneer];
-      this.setState({
-        currentQuestionIndex: this.state.currentQuestionIndex + 1,
-        guessValue: '',
-        currentUserGuess: this.state.currentUserGuess + 1
-      })
-      localStorage.setItem('incorrectAnswers', JSON.stringify(this.props.incorrectAnswers));
-      this.displayScore()
-    }
+  }
+
+  setIncorrectAnswerState = () => {
+    this.setState({
+      currentQuestionIndex: this.state.currentQuestionIndex + 1,
+      guessValue: '',
+      currentUserGuess: this.state.currentUserGuess + 1
+    })
+    localStorage.setItem('incorrectAnswers', JSON.stringify(this.props.incorrectAnswers));
+    this.displayScore()
   }
 
   displayScore = () => {
