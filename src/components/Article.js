@@ -27,7 +27,6 @@ class Article extends Component {
       if (localStorage.hasOwnProperty(key)) {
         // get the key's value from localStorage
         let value = localStorage.getItem(key);
-
         // parse the localStorage string and setState
         try {
           value = JSON.parse(value);
@@ -70,9 +69,7 @@ class Article extends Component {
     let selectedPioneer = this.props.pioneers.find(pioneer => {
       return pioneer.id == this.props.currentPioneer
     })
-    // console.log('conditional', this.state.incorrectAnswers[selectedPioneer.id].length)
     if (this.state.incorrectAnswers[selectedPioneer.id].length === 0) {
-      console.log('resetthe state')
       this.setState(prevState => ({
         incorrectAnswers: {
             ...prevState.incorrectAnswers,
@@ -80,9 +77,7 @@ class Article extends Component {
         }
       }))
     }
-    console.log('before LS', localStorage) 
     localStorage.setItem('incorrectAnswers', JSON.stringify(this.state.incorrectAnswers));
-    console.log('after LS', localStorage)
   }
 
   displayQuizAndResetIncorrectAnswers = () => {

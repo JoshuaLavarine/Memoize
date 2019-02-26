@@ -26,4 +26,20 @@ describe("Score", () => {
   it("should match the snapshot with all data passed in", () => {
     expect(wrapper).toMatchSnapshot();
   });
+
+  it("should match the alternative snapshot with all data passed in", () => {
+    const newWrapper = shallow(    
+      <Score 
+        guessesCorrect = {2}
+        displayScore = {displayScore}
+        currentPioneer = {1}
+        selectPioneer = {selectPioneer}
+        pioneers = {pioneers}
+        currentUserGuess = {1}
+        currentQuestionIndex = {1}
+        incorrectAnswers = {[1]}
+      /> 
+    )
+    expect(newWrapper).toMatchSnapshot();
+  });
 });

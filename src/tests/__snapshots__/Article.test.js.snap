@@ -1,5 +1,56 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Article should match the alternative snapshot with all data passed in 1`] = `
+<section
+  className="complete-article"
+>
+  <article
+    className="pioneer-img-article"
+  >
+    <img
+      className="pioneer"
+      src="http://www.greatthoughtstreasury.com/sites/default/files/Jennifer-Pahlka1%5B1%5D.jpg"
+    />
+  </article>
+  <article
+    className="pioneer-article"
+  >
+    <p>
+      Jennifer Pahlka (1969 - present day) is the founder and Executive Director of Code for America. She served as US Deputy Chief Technology Officer from June 2013 to June 2014 and helped found the United States Digital Service. Previously she had worked at CMP Media with various roles in the computer game industry. She was the co-chair and general manager of the Web 2.0 conferences.
+    </p>
+    <p>
+      She was born in Port Deposit, Maryland, and raised in Austin, New Haven, and New York City. She is a graduate of the Bronx High School of Science and Yale University.
+    </p>
+    <p>
+      Pahlka founded Code for America, a San Francisco-based non-profit organization that aims to make government more transparent and connected. According to the Washington Post Code for America is the technology world’s equivalent of the Peace Corps or Teach for America, offering an alternative to the old, broken path of government IT. In her 2012 TED Talk, Pahlka noted that we will not be able to reinvent government unless we also reinvent citizenship.
+    </p>
+    <p>
+      In May 2013 Pahlka announced she was temporarily taking the position of deputy chief technology officer for government innovation for the US government's Office of Science and Technology Policy. Her principal goal during her year at the White House was to create something more equivalent to the UK's Government Digital Service. She set in motion the creation of the United States Digital Service within the Executive Office of the President, and helped start 18F at the General Services Administration.
+    </p>
+    <p>
+      Pahlka was awarded an Internet and Society Award from the Oxford Internet Institute, in recognition of her contribution to digital open government in the US.
+    </p>
+  </article>
+  <section
+    className="button-container"
+  >
+    <button
+      className="button-back"
+      onClick={[MockFunction]}
+      value={0}
+    >
+      Go Back
+    </button>
+    <button
+      className="button-quiz"
+      onClick={[Function]}
+    >
+      Go to Quiz
+    </button>
+  </section>
+</section>
+`;
+
 exports[`Article should match the snapshot with all data passed in 1`] = `
 <section
   className="complete-article"
@@ -9,32 +60,26 @@ exports[`Article should match the snapshot with all data passed in 1`] = `
   >
     <img
       className="pioneer"
-      src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Commodore_Grace_M._Hopper%2C_USN_%28covered%29.jpg/440px-Commodore_Grace_M._Hopper%2C_USN_%28covered%29.jpg"
+      src="http://www.greatthoughtstreasury.com/sites/default/files/Jennifer-Pahlka1%5B1%5D.jpg"
     />
   </article>
   <article
     className="pioneer-article"
   >
     <p>
-      Grace Brewster Murray Hopper was an American computer scientist and United States Navy rear admiral. One of the first programmers of the Harvard Mark I computer, she was a pioneer of computer programming who invented one of the first compiler related tools. She popularized the idea of machine-independent programming languages, which led to the development of COBOL, an early high-level programming language still in use today.
+      Jennifer Pahlka (1969 - present day) is the founder and Executive Director of Code for America. She served as US Deputy Chief Technology Officer from June 2013 to June 2014 and helped found the United States Digital Service. Previously she had worked at CMP Media with various roles in the computer game industry. She was the co-chair and general manager of the Web 2.0 conferences.
     </p>
     <p>
-      Prior to joining the Navy, Hopper attained a Ph.D. in mathematics from Yale University and was a professor of mathematics at Vassar College. Hopper joined the Navy Reserves and began computing career in 1944 when she worked on the Harvard Mark I team.
+      She was born in Port Deposit, Maryland, and raised in Austin, New Haven, and New York City. She is a graduate of the Bronx High School of Science and Yale University.
     </p>
     <p>
-      In 1949, Grace was part of the team that developed the UNIVAC I computer. She believed that a programming language based on English was possible and during this time, she started working on a complier. Her compiler converted English terms into machine code understood by computers. By 1952, Hopper had finished her program linker (originally called a compiler).
+      Pahlka founded Code for America, a San Francisco-based non-profit organization that aims to make government more transparent and connected. According to the Washington Post Code for America is the technology world’s equivalent of the Peace Corps or Teach for America, offering an alternative to the old, broken path of government IT. In her 2012 TED Talk, Pahlka noted that we will not be able to reinvent government unless we also reinvent citizenship.
     </p>
     <p>
-      In 1954, she was appointed to lead the department for automatic programming, and she led the release of some of the first compiled languages like FLOW-MATIC.
+      In May 2013 Pahlka announced she was temporarily taking the position of deputy chief technology officer for government innovation for the US government's Office of Science and Technology Policy. Her principal goal during her year at the White House was to create something more equivalent to the UK's Government Digital Service. She set in motion the creation of the United States Digital Service within the Executive Office of the President, and helped start 18F at the General Services Administration.
     </p>
     <p>
-      In 1959, was consulted to guide the creation of a machine-independent programming language. This led to the COBOL language, which was inspired by her idea of a language being based on English words.
-    </p>
-    <p>
-      In 1966, she retired from the Naval Reserve, but in 1967, the Navy recalled her to active duty. She retired from the Navy in 1986 and found work as a consultant for the Digital Equipment Corporation, sharing her computing experiences.
-    </p>
-    <p>
-      During her lifetime, Hopper was awarded 40 honorary degrees from universities across the world. A college at Yale University was renamed in her honor. In 1991, she received the National Medal of Technology. She was also posthumously awarded the Presidential Medal of Freedom by in November of 2016.
+      Pahlka was awarded an Internet and Society Award from the Oxford Internet Institute, in recognition of her contribution to digital open government in the US.
     </p>
   </article>
   <section

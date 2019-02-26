@@ -71,7 +71,7 @@ class Quiz extends Component {
       return (
         <section>
           <label onClick={this.enableButton} className="radio-buttons">
-            <input onClick={this.enableButton} type="radio" id={Date.now()} name="radioBtns" value={question}></input>
+            <input onClick={this.enableButton} type="radio" name="radioBtns" value={question}></input>
             {question}
           </label>
         </section>
@@ -86,7 +86,7 @@ class Quiz extends Component {
     return (
       <section>
         <label onClick={this.enableButton} className="radio-buttons">
-          <input onClick={this.enableButton} type="radio" id={Date.now()} name="radioBtns" value={correctAnswer}></input>
+          <input onClick={this.enableButton} type="radio" name="radioBtns" value={correctAnswer}></input>
           {correctAnswer}
         </label>
       </section>
@@ -101,12 +101,8 @@ class Quiz extends Component {
 
   checkCorrectAnswer = (e) => {
     e.preventDefault();
-    let selectedPioneer = this.props.pioneers.find(pioneer => {
-      return pioneer.id == this.props.currentPioneer
-    })
-    let currentQuestion = selectedPioneer.multipleChoice.questions.find(question => {
-      return question.id == this.props.incorrectAnswers[selectedPioneer.id][this.state.currentQuestionIndex]
-    })
+    let selectedPioneer = this.selectedPioneer();
+    let currentQuestion = this.nextQuestion();
     let correctAnswer = currentQuestion.correctAnswer
     if (this.state.guessValue === correctAnswer) {
       let updatedIncorrectAnswers = this.props.incorrectAnswers[this.props.currentPioneer];

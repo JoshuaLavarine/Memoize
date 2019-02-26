@@ -1,5 +1,53 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Score should match the alternative snapshot with all data passed in 1`] = `
+<section
+  className="article-layout-correct"
+>
+  <p>
+    You scored 
+    2
+     out of 
+    1
+  </p>
+  <section
+    className="button-container-correct"
+  >
+    <button
+      className="button-quiz-correct"
+      id={0}
+      onClick={[MockFunction]}
+    >
+      Choose New Pioneer
+    </button>
+  </section>
+</section>
+`;
+
+exports[`Score should match the new wrapper with all data passed in 1`] = `
+<section
+  className="article-layout-correct"
+>
+  <p>
+    You scored 
+    2
+     out of 
+    1
+  </p>
+  <section
+    className="button-container-correct"
+  >
+    <button
+      className="button-quiz-correct"
+      id={0}
+      onClick={[MockFunction]}
+    >
+      Choose New Pioneer
+    </button>
+  </section>
+</section>
+`;
+
 exports[`Score should match the snapshot with all data passed in 1`] = `
 <section
   className="article-layout"

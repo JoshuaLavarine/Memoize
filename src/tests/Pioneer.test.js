@@ -22,5 +22,11 @@ describe("Pioneer", () => {
     expect(wrapper.state()).toEqual({ 
 			currentPioneer: 0
 		});
-	});
+  });
+  
+  it("should change the current pioneer to clicked pioneer ID", () => {
+    expect(wrapper.state()).toEqual({ currentPioneer: 0 });
+    wrapper.find(".pioneer-img").first().simulate("click", { target: {id: 1}});
+    expect(wrapper.state()).toEqual({ currentPioneer: 1 });
+  });
 });
