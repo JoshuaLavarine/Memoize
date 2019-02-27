@@ -5,7 +5,7 @@ exports[`Pioneer should match the snapshot with all data passed in 1`] = `
   className="pioneer-layout"
 >
   <p>
-    Please a pioneer's image to learn more.
+    Please select a pioneer's image to learn more.
   </p>
   <section
     className="contain-pioneers"
@@ -18,6 +18,7 @@ exports[`Pioneer should match the snapshot with all data passed in 1`] = `
         key="Grace Hopper"
       >
         <img
+          alt=""
           className="pioneer-img"
           id={1}
           onClick={[Function]}
@@ -32,6 +33,7 @@ exports[`Pioneer should match the snapshot with all data passed in 1`] = `
         key="Augusta Ada King, Countess of Lovelace"
       >
         <img
+          alt=""
           className="pioneer-img"
           id={2}
           onClick={[Function]}
@@ -46,6 +48,7 @@ exports[`Pioneer should match the snapshot with all data passed in 1`] = `
         key="Alan Turing"
       >
         <img
+          alt=""
           className="pioneer-img"
           id={3}
           onClick={[Function]}
@@ -60,6 +63,7 @@ exports[`Pioneer should match the snapshot with all data passed in 1`] = `
         key="Timothy John Berners-Lee"
       >
         <img
+          alt=""
           className="pioneer-img"
           id={4}
           onClick={[Function]}
@@ -74,6 +78,7 @@ exports[`Pioneer should match the snapshot with all data passed in 1`] = `
         key="Jennifer Pahlka"
       >
         <img
+          alt=""
           className="pioneer-img"
           id={5}
           onClick={[Function]}

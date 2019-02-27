@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Header from './Header';
 import Pioneer from './Pioneer';
-// import pioneersData from '../pioneers'
 
 class App extends Component {
   constructor() {
@@ -11,7 +10,6 @@ class App extends Component {
     }
   }
 
-  
   componentDidMount() {
       fetch("http://memoize-datasets.herokuapp.com/api/v1/pioneersdata")
         .then(response => response.json())

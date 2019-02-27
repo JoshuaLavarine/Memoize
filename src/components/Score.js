@@ -3,9 +3,6 @@ import React, {Component} from 'react';
 class Score extends Component {
 
   render() {
-    let currentPioneer = this.props.pioneers.find(pioneer => {
-      return pioneer.id == this.props.currentPioneer
-    })
     switch(this.props.currentQuestionIndex === this.props.incorrectAnswers.length) {
       case(true):
       return (

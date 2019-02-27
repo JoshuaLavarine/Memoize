@@ -21,22 +21,14 @@ class Article extends Component {
   }
 
   hydrateStateWithLocalStorage() {
-    // for all items in state
-    for (let key in this.state) {
-      // if the key exists in localStorage
+    let stateKeys = Object.keys(this.state)
+    stateKeys.forEach(key => {
       if (localStorage.hasOwnProperty(key)) {
-        // get the key's value from localStorage
         let value = localStorage.getItem(key);
-        // parse the localStorage string and setState
-        try {
-          value = JSON.parse(value);
-          this.setState({ [key]: value });
-        } catch (e) {
-          // handle empty string
-          this.setState({ [key]: value });
-        }
+        let parsedValue = JSON.parse(value);
+        this.setState({ [key]: parsedValue });
       }
-    }
+    })
   }
 
   displayQuiz = () => {
@@ -50,7 +42,7 @@ class Article extends Component {
       return pioneer.id == this.props.currentPioneer
     })
     return ( 
-      <img className="pioneer" src={selectedPioneer.img}></img>
+      <img alt="" className="pioneer" src={selectedPioneer.img}></img>
     )
   }
 
@@ -63,7 +55,6 @@ class Article extends Component {
     })
     return allParagraphs
   }
-
 
   resetIncorrectAnswers = () => {
     let selectedPioneer = this.props.pioneers.find(pioneer => {
