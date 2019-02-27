@@ -55,3 +55,47 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 }
+
+@media only screen and (max-width: 685px) {
+  .pioneer-layout {
+    margin: 0 auto;
+    background-color: white;
+    box-shadow: 0px 0px 5px 0px #00000070;
+    width: 290px;
+  }
+  .pioneer-card {
+    opacity: 1;
+    box-shadow: 0px 0px 5px 0px #00000070;
+    background-color: #ecf0f1;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 410px;
+    width: 100%;
+    margin-top: 14px;
+  }
+}
+
+@media only screen and (min-width: 686px) {
+  .pioneer-layout {
+    width: 589px;
+  }
+
+  .individual-pioneers {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    margin-left: 37px;
+  }
+}
+  
+@media only screen and (min-width: 1200px) {
+.pioneer-layout {
+  width: 1036px;
+}
+}
+
+@media only screen and (min-width: 1074px) {
+.pioneer-layout {
+    width: 822px;
+}
+}

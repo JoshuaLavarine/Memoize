@@ -41,7 +41,7 @@ class Pioneer extends Component {
     default:
       return (
         <article className="pioneer-layout">
-          <p>Please a pioneer's image to learn more.</p>
+          <p>Please select a pioneer's image to learn more.</p>
           <section className="contain-pioneers">
             <section className="individual-pioneers"> 
               {this.displayPioneers()}

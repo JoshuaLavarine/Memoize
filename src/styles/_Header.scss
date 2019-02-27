@@ -17,3 +17,27 @@
     color: #2c3e50;
   }
 }
+
+
+@media only screen and (max-width: 685px) {
+  .Header {
+    width: 100%;
+    height: 105px;
+    background-color: #3498dbb3;
+    text-align: center;
+    overflow: hidden;
+    h1{
+      font-size: 24px;
+      color: #fff;
+      text-transform: uppercase;
+      padding-top: 22px;
+    }
+    h2{
+      font-size: 14px;
+      text-transform: uppercase;
+      line-height: 2;
+      color: #2c3e50;
+      margin-top: 8px;
+    }
+  }
+}
