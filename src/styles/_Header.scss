@@ -1,43 +1,43 @@
 .Header {
-	width: 100%;
-	height: 175px;
-	background-color: #3498dbb3;
-	text-align: center;
-	overflow: hidden;
-	h1{
-    font-size: 42px;
+  background-color: #3498dbb3;
+  height: 175px;
+  overflow: hidden;
+  text-align: center;
+  width: 100%;
+	h1 {
     color: #fff;
-    text-transform: uppercase;
+    font-size: 42px;
     padding-top: 45px;
-  }
-  h2{
-    font-size: 22px;
     text-transform: uppercase;
-    line-height: 2;
+  }
+  h2 {
     color: #2c3e50;
+    font-size: 22px;
+    line-height: 2;
+    text-transform: uppercase;
   }
 }
 
 
 @media only screen and (max-width: 685px) {
   .Header {
-    width: 100%;
-    height: 105px;
     background-color: #3498dbb3;
-    text-align: center;
+    height: 105px;
     overflow: hidden;
-    h1{
-      font-size: 24px;
+    text-align: center;
+    width: 100%;
+    h1 {
       color: #fff;
-      text-transform: uppercase;
+      font-size: 24px;
       padding-top: 22px;
-    }
-    h2{
-      font-size: 14px;
       text-transform: uppercase;
-      line-height: 2;
+    }
+    h2 {
       color: #2c3e50;
+      font-size: 14px;
+      line-height: 2;
       margin-top: 8px;
+      text-transform: uppercase;
     }
   }
 }
