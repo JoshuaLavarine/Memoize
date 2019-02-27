@@ -35,5 +35,12 @@
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
     ]
-  }
+  },
+  "collectCoverageFrom": [
+    "src/*/*.js",
+    "src/*/*/*.js",
+    "!src/mockData/*.js",
+    "!src/reducers/index.js",
+    "!src/serviceWorker.js"
+  ]
 }

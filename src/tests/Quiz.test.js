@@ -72,7 +72,62 @@ describe("Quiz", () => {
     expect(wrapper.state('enableButton')).toEqual(true)
     wrapper.instance().displayScore();
     expect(wrapper.state('displayScore')).toEqual(false)
-
-
   });
+
+  it('should reset the guess value and increment the currentQuestionIndex and currentUserGuess', () => {
+    expect(wrapper.state('currentUserGuess')).toEqual(0)
+    expect(wrapper.state('currentQuestionIndex')).toEqual(0)
+    wrapper.setState({ guessValue: 'hello' })
+
+    wrapper.instance().displayScore = jest.fn()
+    wrapper.instance().setIncorrectAnswerState();
+    
+    expect(wrapper.state('currentUserGuess')).toEqual(1)
+    expect(wrapper.state('currentQuestionIndex')).toEqual(1)
+    expect(wrapper.state('guessValue')).toEqual('')
+    expect(wrapper.instance().displayScore).toHaveBeenCalled()
+  });
+
+  it('should reset the guess value, remove correct answers, and increment the guessesCorrect and currentUserGuess', () => {
+    expect(wrapper.state('currentUserGuess')).toEqual(0)
+    expect(wrapper.state('guessesCorrect')).toEqual(0)
+    wrapper.setState({ guessValue: 'hello' })
+
+    wrapper.instance().displayScore = jest.fn()
+    wrapper.instance().setCorrectAnswerState();
+    
+    expect(wrapper.state( 'incorrectAnswers' )).toEqual({
+      "1": [2, 3, 4, 5]
+    })
+    expect(wrapper.state('currentUserGuess')).toEqual(1)
+    expect(wrapper.state('guessesCorrect')).toEqual(1)
+    expect(wrapper.state('guessValue')).toEqual('')
+    expect(wrapper.instance().displayScore).toHaveBeenCalled()
+  });
+
+  // it('should reset the guess value, remove correct answers, and increment the guessesCorrect and currentUserGuess', () => {
+  //   // wrapper.find(".button-quiz").first().simulate("click", { event }target: {id: 1}});
+
+  //   // wrapper.instance().preventDefault = jest.fn()
+  //   // wrapper.instance().nextQuestion = jest.fn()
+  //   wrapper.instance().setCorrectAnswerState = jest.fn()
+  //   wrapper.instance().setIncorrectAnswerState = jest.fn()
+
+  //   wrapper.instance().checkCorrectAnswer();
+    
+  //   // expect(wrapper.instance().nextQuestion).toHaveBeenCalled()
+  //   expect(wrapper.instance().setCorrectAnswerState).toHaveBeenCalled()
+  //   expect(wrapper.instance().setIncorrectAnswerState).toHaveBeenCalled()
+
+  // });
+
+  it('should set the guessValue to the target value', () => {
+    const e = { target: {value: 'hello'} };
+    expect(wrapper.state('guessValue')).toEqual('')
+    
+    wrapper.instance().getClickedValue(e) 
+
+    expect(wrapper.state('guessValue')).toEqual('hello')
+  });
+  
 });

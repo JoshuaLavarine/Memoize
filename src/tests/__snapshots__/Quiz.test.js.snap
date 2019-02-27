@@ -356,9 +356,7 @@ exports[`Quiz should match the alternative snapshot with all data passed in 1`] 
 
 exports[`Quiz should match the snapshot with all data passed in 1`] = `
 <form>
-  <section
-    onClick={[Function]}
-  >
+  <section>
     <section>
       <p>
         Question: 

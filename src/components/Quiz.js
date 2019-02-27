@@ -113,21 +113,19 @@ class Quiz extends Component {
   setCorrectAnswerState = () => {
     let selectedPioneer = this.selectedPioneer();
     let updatedIncorrectAnswers = this.props.incorrectAnswers[this.props.currentPioneer];
-      let index = updatedIncorrectAnswers.indexOf(this.nextQuestion().id)
-      updatedIncorrectAnswers.splice(index, 1)
-      this.setState(prevState => ({
-        incorrectAnswers: {
-            ...prevState.incorrectAnswers,
-          [selectedPioneer.id]: updatedIncorrectAnswers,
-        }
-      }))
-      this.setState({
-        guessesCorrect: this.state.guessesCorrect + 1,
-        currentUserGuess: this.state.currentUserGuess + 1,
-        guessValue: '',
-      })
-      localStorage.setItem('incorrectAnswers', JSON.stringify(this.props.incorrectAnswers));
-      this.displayScore()
+    let index = updatedIncorrectAnswers.indexOf(this.nextQuestion().id)
+    updatedIncorrectAnswers.splice(index, 1)
+    this.setState(prevState => ({
+      incorrectAnswers: {
+          ...prevState.incorrectAnswers,
+        [selectedPioneer.id]: updatedIncorrectAnswers,
+      },
+      guessesCorrect: this.state.guessesCorrect + 1,
+      currentUserGuess: this.state.currentUserGuess + 1,
+      guessValue: ''
+    }))
+    localStorage.setItem('incorrectAnswers', JSON.stringify(this.props.incorrectAnswers));
+    this.displayScore()
   }
 
   setIncorrectAnswerState = () => {
@@ -158,7 +156,6 @@ class Quiz extends Component {
       case(true):
       return (
           <Score
-          // currentQuestion = {this.state.currentQuestionIndex}
           guessesCorrect = {this.state.guessesCorrect}
           displayScore = {this.displayScore}
           currentPioneer = {this.props.currentPioneer}
@@ -172,7 +169,7 @@ class Quiz extends Component {
     default:
       return (
         <form>
-          <section onClick={this.getClickedValue}>{this.displayPrompt()}</section>
+          <section>{this.displayPrompt()}</section>
           <section onClick={this.getClickedValue}>{this.displayCorrectAnswer()}</section>
           <section onClick={this.getClickedValue}>{this.displayPossibleAnswers()}</section>
           <section className="button-container">
