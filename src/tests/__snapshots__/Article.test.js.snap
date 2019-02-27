@@ -15,19 +15,29 @@ exports[`Article should match the alternative snapshot with all data passed in 1
   <article
     className="pioneer-article"
   >
-    <p>
+    <p
+      key="0"
+    >
       Jennifer Pahlka (1969 - present day) is the founder and Executive Director of Code for America. She served as US Deputy Chief Technology Officer from June 2013 to June 2014 and helped found the United States Digital Service. Previously she had worked at CMP Media with various roles in the computer game industry. She was the co-chair and general manager of the Web 2.0 conferences.
     </p>
-    <p>
+    <p
+      key="1"
+    >
       She was born in Port Deposit, Maryland, and raised in Austin, New Haven, and New York City. She is a graduate of the Bronx High School of Science and Yale University.
     </p>
-    <p>
+    <p
+      key="2"
+    >
       Pahlka founded Code for America, a San Francisco-based non-profit organization that aims to make government more transparent and connected. According to the Washington Post Code for America is the technology world’s equivalent of the Peace Corps or Teach for America, offering an alternative to the old, broken path of government IT. In her 2012 TED Talk, Pahlka noted that we will not be able to reinvent government unless we also reinvent citizenship.
     </p>
-    <p>
+    <p
+      key="3"
+    >
       In May 2013 Pahlka announced she was temporarily taking the position of deputy chief technology officer for government innovation for the US government's Office of Science and Technology Policy. Her principal goal during her year at the White House was to create something more equivalent to the UK's Government Digital Service. She set in motion the creation of the United States Digital Service within the Executive Office of the President, and helped start 18F at the General Services Administration.
     </p>
-    <p>
+    <p
+      key="4"
+    >
       Pahlka was awarded an Internet and Society Award from the Oxford Internet Institute, in recognition of her contribution to digital open government in the US.
     </p>
   </article>
@@ -66,19 +76,29 @@ exports[`Article should match the snapshot with all data passed in 1`] = `
   <article
     className="pioneer-article"
   >
-    <p>
+    <p
+      key="0"
+    >
       Jennifer Pahlka (1969 - present day) is the founder and Executive Director of Code for America. She served as US Deputy Chief Technology Officer from June 2013 to June 2014 and helped found the United States Digital Service. Previously she had worked at CMP Media with various roles in the computer game industry. She was the co-chair and general manager of the Web 2.0 conferences.
     </p>
-    <p>
+    <p
+      key="1"
+    >
       She was born in Port Deposit, Maryland, and raised in Austin, New Haven, and New York City. She is a graduate of the Bronx High School of Science and Yale University.
     </p>
-    <p>
+    <p
+      key="2"
+    >
       Pahlka founded Code for America, a San Francisco-based non-profit organization that aims to make government more transparent and connected. According to the Washington Post Code for America is the technology world’s equivalent of the Peace Corps or Teach for America, offering an alternative to the old, broken path of government IT. In her 2012 TED Talk, Pahlka noted that we will not be able to reinvent government unless we also reinvent citizenship.
     </p>
-    <p>
+    <p
+      key="3"
+    >
       In May 2013 Pahlka announced she was temporarily taking the position of deputy chief technology officer for government innovation for the US government's Office of Science and Technology Policy. Her principal goal during her year at the White House was to create something more equivalent to the UK's Government Digital Service. She set in motion the creation of the United States Digital Service within the Executive Office of the President, and helped start 18F at the General Services Administration.
     </p>
-    <p>
+    <p
+      key="4"
+    >
       Pahlka was awarded an Internet and Society Award from the Oxford Internet Institute, in recognition of her contribution to digital open government in the US.
     </p>
   </article>

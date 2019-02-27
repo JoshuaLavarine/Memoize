@@ -15,9 +15,7 @@ class Quiz extends Component {
   }
 
   nextQuestion = () => {
-    let selectedPioneer = this.props.pioneers.find(pioneer => {
-      return pioneer.id == this.props.currentPioneer
-    })
+    let selectedPioneer = this.selectedPioneer()
     let currentQuestion = selectedPioneer.multipleChoice.questions.find(question => {
       return question.id == this.props.incorrectAnswers[selectedPioneer.id][this.state.currentQuestionIndex]
     })
@@ -46,7 +44,6 @@ class Quiz extends Component {
     })
   }
 
-
   displayPrompt = () => {
     let currentQuestion = this.nextQuestion()
     return (
@@ -61,7 +58,7 @@ class Quiz extends Component {
     let currentQuestion = this.nextQuestion()
     let incorrectChoices = currentQuestion.incorrectAnswers.map(question => {
       return (
-        <section>
+        <section key={question}>
           <label onClick={this.enableButton} className="radio-buttons">
             <input onClick={this.enableButton} type="radio" name="radioBtns" value={question}></input>
             {question}

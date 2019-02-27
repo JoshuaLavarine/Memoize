@@ -58,8 +58,8 @@ class Article extends Component {
     let selectedPioneer = this.props.pioneers.find(pioneer => {
       return pioneer.id == this.props.currentPioneer
     })
-    let allParagraphs = selectedPioneer.paragraphs.map(paragraph => {
-      return <p>{paragraph}</p>
+    let allParagraphs = selectedPioneer.paragraphs.map((paragraph, index) => {
+      return <p key={index}>{paragraph}</p>
     })
     return allParagraphs
   }

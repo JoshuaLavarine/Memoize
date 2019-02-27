@@ -388,7 +388,9 @@ exports[`Quiz should match the snapshot with all data passed in 1`] = `
   <section
     onClick={[Function]}
   >
-    <section>
+    <section
+      key="Harvard"
+    >
       <label
         className="radio-buttons"
         onClick={[Function]}
@@ -402,7 +404,9 @@ exports[`Quiz should match the snapshot with all data passed in 1`] = `
         Harvard
       </label>
     </section>
-    <section>
+    <section
+      key="Princeton"
+    >
       <label
         className="radio-buttons"
         onClick={[Function]}
@@ -416,7 +420,9 @@ exports[`Quiz should match the snapshot with all data passed in 1`] = `
         Princeton
       </label>
     </section>
-    <section>
+    <section
+      key="Louisiana State University"
+    >
       <label
         className="radio-buttons"
         onClick={[Function]}
