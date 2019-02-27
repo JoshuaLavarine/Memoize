@@ -105,21 +105,28 @@ describe("Quiz", () => {
     expect(wrapper.instance().displayScore).toHaveBeenCalled()
   });
 
-  // it('should reset the guess value, remove correct answers, and increment the guessesCorrect and currentUserGuess', () => {
-  //   // wrapper.find(".button-quiz").first().simulate("click", { event }target: {id: 1}});
-
-  //   // wrapper.instance().preventDefault = jest.fn()
-  //   // wrapper.instance().nextQuestion = jest.fn()
-  //   wrapper.instance().setCorrectAnswerState = jest.fn()
-  //   wrapper.instance().setIncorrectAnswerState = jest.fn()
-
-  //   wrapper.instance().checkCorrectAnswer();
+  it('should check if answer is incorrect', () => {
+    const e = { preventDefault: jest.fn( )};
+    wrapper.instance().preventDefault = jest.fn()
+    wrapper.instance().setIncorrectAnswerState = jest.fn()
     
-  //   // expect(wrapper.instance().nextQuestion).toHaveBeenCalled()
-  //   expect(wrapper.instance().setCorrectAnswerState).toHaveBeenCalled()
-  //   expect(wrapper.instance().setIncorrectAnswerState).toHaveBeenCalled()
+    wrapper.instance().checkCorrectAnswer(e);
+    
+    expect(wrapper.instance().setIncorrectAnswerState).toHaveBeenCalled()
 
-  // });
+  });
+
+  it('should check if answer is correct', () => {
+    wrapper.setState({ guessValue: 'Yale' })
+    const e = { preventDefault: jest.fn( )};
+    wrapper.instance().preventDefault = jest.fn()
+    wrapper.instance().setCorrectAnswerState = jest.fn()
+
+    wrapper.instance().checkCorrectAnswer(e);
+
+    expect(wrapper.instance().setCorrectAnswerState).toHaveBeenCalled()
+
+  });
 
   it('should set the guessValue to the target value', () => {
     const e = { target: {value: 'hello'} };
