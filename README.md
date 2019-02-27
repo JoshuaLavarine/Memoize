@@ -5,7 +5,7 @@ Once a user passes all questions for a "pioneer," the incorrect answers are rese
 
 I completed this project as a five-day solo project in Front-End Mod 2 (week 12 of 24) at Turing School of Software and Design.   
 
-## INSTALL INSTRUCTIONS
+## Installation Instructions
 In the project directory, please run:
 
 #### npm start
@@ -16,7 +16,7 @@ Once the server is running, open http://localhost:3000 to view it in the browser
 The page will reload if any alterations to the code are made.
 You will also see any lint errors in the console.
 
-## TECH / FRAMEWORKS USED
+## Tech / Frameworks Used
 - ReactJS
 - SASS
 - JSX
@@ -60,7 +60,7 @@ I would also like to create a button that would allow users to reset the questio
 
 Additionally, I would like to add a total score, which would add up all of the individual round scores. 
 
-## Tools
+## Tools Used
 [VSCode](https://code.visualstudio.com/)  
 [ReactJS](https://reactjs.org/)  
 [Enzyme](https://airbnb.io/enzyme/)   
